@@ -37,6 +37,20 @@
       }catch(err){notice($("#cloudLoginNotice"),err.message,true);}
       finally{btn.disabled=false;}
     });
+    $("#cloudAdminCreateAccount").addEventListener("click",async()=>{
+      const email=$("#cloudAdminEmail").value.trim(),password=$("#cloudAdminPassword").value;
+      if(!email||password.length<8){notice($("#cloudLoginNotice"),"Enter the administrator email and a password of at least 8 characters.",true);return;}
+      const button=$("#cloudAdminCreateAccount");button.disabled=true;
+      try{
+        const {data,error}=await sb.auth.signUp({email,password});
+        if(error)throw error;
+        if(data.user){
+          if(data.session)await sb.auth.signOut();
+          notice($("#cloudLoginNotice"),"Account request created. Check the email inbox for Supabase confirmation. After confirming, send me this exact email address so I can authorize it as the first MAVI CLASSES administrator.");
+        } else notice($("#cloudLoginNotice"),"If this email is eligible, a confirmation message will arrive shortly.");
+      }catch(err){notice($("#cloudLoginNotice"),err.message,true);}
+      finally{button.disabled=false;}
+    });
     $("#cloudAdminLogout").addEventListener("click",async()=>{await sb.auth.signOut();location.reload()});
 
     const fileToBlob = async file => new Blob([await file.arrayBuffer()],{type:file.type});
