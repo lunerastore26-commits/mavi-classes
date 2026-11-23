@@ -129,3 +129,15 @@ main>section:nth-of-type(4) *{animation-delay:.10s}
     animation:none!important;
   }
 }
+
+
+/* Keep the student achievements strip completely independent of page reveal motion.
+   Its marquee keeps its own original scrolling animation. */
+#student-results .results-heading,
+#student-results .results-heading *,
+#student-results .ranker-card,
+#student-results .ranker-card *,
+#student-results .student-voices,
+#student-results .student-voices *{
+  animation:none!important;
+}
