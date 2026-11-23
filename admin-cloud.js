@@ -19,8 +19,8 @@
       return true;
     }
     if(session) {
-      try { if(await verify()) return; }
-      catch(e){ notice($("#cloudLoginNotice"),"Could not verify administrator access: "+e.message,true); }
+      try { if(await verify()) return; await sb.auth.signOut(); }
+      catch(e){ await sb.auth.signOut(); notice($("#cloudLoginNotice"),"Could not verify administrator access: "+e.message,true); }
     }
     loginPanel.hidden=false; workspace.hidden=true;
     $("#cloudAdminLoginForm").addEventListener("submit",async e=>{
