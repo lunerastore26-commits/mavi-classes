@@ -45,12 +45,12 @@ h1{font-size:clamp(46px,5.2vw,68px);line-height:1.08;letter-spacing:-3.5px;color
 .hero p{font-size:16px;line-height:1.8;color:#71809a;max-width:500px}.hero-actions{gap:12px;margin-top:28px}.hero-actions .button{min-height:53px}
 .button.watch{background:#fff;border:1px solid #e3e8f0;color:#34415c;box-shadow:0 4px 10px #1a29400d}.button.watch:hover{background:#f9fbff;color:#111a31}
 .play{display:inline-grid;place-items:center;background:#fff0e4;color:#f06416;border-radius:50%;width:23px;height:23px;font-size:9px;margin-right:7px}
-.hero-proof{display:flex;align-items:center;gap:12px;margin-top:37px}.proof-mark{height:40px;width:40px;display:grid;place-items:center;border-radius:50%;background:#fff1e7;color:#f06416;font:800 18px "Plus Jakarta Sans";border:1px solid #ffdfca}.hero-proof strong{display:block;font-size:12px;color:#27334c}.hero-proof small{display:block;font-size:10px;color:#8a96aa}
+.hero-proof{display:flex;align-items:center;gap:12px;margin-top:37px}.proof-mark{height:40px;width:40px;display:grid;place-items:center;border-radius:50%;background:#fff1e7;color:#f06416;font:800 18px "Manrope",sans-serif;border:1px solid #ead9ca}.hero-proof strong{display:block;font-size:12px;color:#27334c}.hero-proof small{display:block;font-size:10px;color:#8a96aa}
 .hero-visual{position:relative;min-height:430px;display:flex;align-items:center;justify-content:center}
 .hero-image{width:88%;height:420px;border-radius:30px;overflow:hidden;position:relative;z-index:1;background:#e5eaf2;box-shadow:0 24px 60px #1b2b451c}.hero-image img{width:100%;height:100%;object-fit:cover}
 .image-caption{left:0;right:0;bottom:0;max-width:none;padding:18px 22px;background:linear-gradient(90deg,rgba(17,26,49,.92),rgba(17,26,49,.72));border:0;color:white;box-shadow:none}.image-caption strong{font:800 15px "Plus Jakarta Sans";color:#fff}.image-caption span{font-size:11px;color:#e4e9f1}
 .float-card{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #edf0f5;border-radius:16px;padding:12px 15px;box-shadow:0 12px 32px #17264018}
-.float-top{top:37px;right:-1px}.float-bottom{bottom:34px;left:-4px}.float-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#fff0e5;color:#f06416;font-size:17px}.float-icon.blue{background:#edf2ff;color:#3869ee}.float-card strong{display:block;font:800 11px "Plus Jakarta Sans";color:#1a2540}.float-card small{display:block;font-size:9px;color:#8995a8}
+.float-top{top:37px;right:-1px}.float-bottom{bottom:34px;left:-4px}.float-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#fff0e5;color:#f06416;font-size:17px}.float-icon.blue{background:#edf2ff;color:#3869ee}.float-card strong{display:block;font:800 12px "Manrope",sans-serif;color:#173f43}.float-card small{display:block;font-size:9px;color:#8995a8}
 .hero-orbit{position:absolute;border:1px solid #ffe2d1;border-radius:50%;z-index:0}.orbit-one{width:420px;height:420px;right:-90px;top:-12px}.orbit-two{width:300px;height:300px;right:-30px;top:48px;border-color:#e5ecfa}
 .trust-strip{border-bottom:1px solid #edf0f5}.trust-inner{padding:22px 0}.trust-label{font-size:10px;letter-spacing:1.5px;color:#8a96aa}.trust-item{font-size:12px;color:#46536d}.trust-item b{color:#ff690f}
 .section{padding:88px 0}.soft{background:#f8faff}.section-head h2,.about-copy h2{font-weight:800;color:#111a31;letter-spacing:-1.4px}.section-head p,.about-copy p{color:#71809a;line-height:1.8}
@@ -147,6 +147,21 @@ footer{background:#102f33}.footer-links h4{color:#d7a27f}
 @keyframes maviRankerMarquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media(max-width:760px){#student-results{padding:58px 0 54px}#student-results .results-heading{align-items:flex-start;flex-direction:column;gap:17px;margin-bottom:20px}#student-results .results-heading h2{font-size:29px}#student-results .ranker-card{flex-basis:225px;width:225px;min-height:180px;padding:20px}#student-results .student-voices{align-items:flex-start;flex-direction:column;padding:23px 22px;gap:17px}}
 @media(prefers-reduced-motion:reduce){#student-results .ranker-track{animation:none!important;transform:none!important}#student-results .ranker-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
+
+/* Consistent typography and a seamless, equal-width student achievement marquee */
+.hero .float-card strong{font-family:'Manrope',sans-serif!important;font-size:12px!important;font-weight:800!important;letter-spacing:.05px!important;color:#173f43!important}
+.hero .float-card small{font-family:'DM Sans',sans-serif!important;font-size:10px!important;line-height:1.45!important;color:#687777!important}
+.hero .float-card .float-icon{font-family:'DM Sans',sans-serif!important}
+.hero .image-caption strong,.hero .hero-proof strong{font-family:'Manrope',sans-serif!important}
+#student-results .ranker-track{display:flex!important;align-items:stretch!important;gap:0!important;width:max-content!important;animation:maviRankerMarquee 34s linear infinite!important}
+#student-results .ranker-group{display:flex!important;flex:0 0 auto!important;align-items:stretch!important;gap:0!important;width:max-content!important}
+#student-results .ranker-card{font-family:'DM Sans',sans-serif!important;box-sizing:border-box!important;flex:0 0 250px!important;width:250px!important;margin:0 18px 0 0!important}
+#student-results .ranker-name,#student-results .ranker-result,#student-results .ranker-avatar{font-family:'Manrope',sans-serif!important}
+#student-results .ranker-school,#student-results .results-heading p,#student-results .student-voices p{font-family:'DM Sans',sans-serif!important}
+#student-results .ranker-card:hover{border-color:#d7b99f!important;box-shadow:0 14px 32px rgba(23,63,67,.12)!important}
+@media(max-width:760px){#student-results .ranker-card{flex-basis:225px!important;width:225px!important;margin-right:14px!important}}
+@media(prefers-reduced-motion:reduce){#student-results .ranker-track{animation:none!important}}
+
 </style>
 <link rel="stylesheet" href="footer.css?v=20261123-final">
 
@@ -261,14 +276,19 @@ main .approach article,main .faq,main .contact-card,main .form-card{
    <a class="results-link" href="feedback.html">Share your story <span>↗</span></a>
   </div>
   <div class="ranker-marquee" aria-label="Student achievements scrolling continuously">
-   <div class="ranker-track"><article class="ranker-card"><div class="ranker-avatar avatar-violet">M</div><div class="ranker-name">MAY GILL</div><div class="ranker-result">BOARD · 97%</div><div class="ranker-school">CBSE · MEERUT</div></article>
-   <article class="ranker-card"><div class="ranker-avatar avatar-green">K</div><div class="ranker-name">KRITIKA GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
-   <article class="ranker-card"><div class="ranker-avatar avatar-green">P</div><div class="ranker-name">PRIYANJALI GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
-   <article class="ranker-card"><div class="ranker-avatar avatar-violet">A</div><div class="ranker-name">AKASH DUBEY</div><div class="ranker-result">ICSE BOARD · 93%</div><div class="ranker-school">CHRIST CHURCH COLLEGE · MEERUT</div></article>
-    <div class="ranker-duplicate" aria-hidden="true"><article class="ranker-card"><div class="ranker-avatar avatar-violet">M</div><div class="ranker-name">MAY GILL</div><div class="ranker-result">BOARD · 97%</div><div class="ranker-school">CBSE · MEERUT</div></article>
-   <article class="ranker-card"><div class="ranker-avatar avatar-green">K</div><div class="ranker-name">KRITIKA GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
-   <article class="ranker-card"><div class="ranker-avatar avatar-green">P</div><div class="ranker-name">PRIYANJALI GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
-   <article class="ranker-card"><div class="ranker-avatar avatar-violet">A</div><div class="ranker-name">AKASH DUBEY</div><div class="ranker-result">ICSE BOARD · 93%</div><div class="ranker-school">CHRIST CHURCH COLLEGE · MEERUT</div></article></div>
+   <div class="ranker-track">
+    <div class="ranker-group">
+     <article class="ranker-card"><div class="ranker-avatar avatar-violet">M</div><div class="ranker-name">MAY GILL</div><div class="ranker-result">BOARD · 97%</div><div class="ranker-school">CBSE · MEERUT</div></article>
+     <article class="ranker-card"><div class="ranker-avatar avatar-green">K</div><div class="ranker-name">KRITIKA GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
+     <article class="ranker-card"><div class="ranker-avatar avatar-green">P</div><div class="ranker-name">PRIYANJALI GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
+     <article class="ranker-card"><div class="ranker-avatar avatar-violet">A</div><div class="ranker-name">AKASH DUBEY</div><div class="ranker-result">ICSE BOARD · 93%</div><div class="ranker-school">CHRIST CHURCH COLLEGE · MEERUT</div></article>
+    </div>
+    <div class="ranker-group" aria-hidden="true">
+     <article class="ranker-card"><div class="ranker-avatar avatar-violet">M</div><div class="ranker-name">MAY GILL</div><div class="ranker-result">BOARD · 97%</div><div class="ranker-school">CBSE · MEERUT</div></article>
+     <article class="ranker-card"><div class="ranker-avatar avatar-green">K</div><div class="ranker-name">KRITIKA GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
+     <article class="ranker-card"><div class="ranker-avatar avatar-green">P</div><div class="ranker-name">PRIYANJALI GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
+     <article class="ranker-card"><div class="ranker-avatar avatar-violet">A</div><div class="ranker-name">AKASH DUBEY</div><div class="ranker-result">ICSE BOARD · 93%</div><div class="ranker-school">CHRIST CHURCH COLLEGE · MEERUT</div></article>
+    </div>
    </div>
   </div>
   <div class="student-voices">
