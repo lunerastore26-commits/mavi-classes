@@ -131,3 +131,36 @@ button,.btn,.button,.nav-login,.nav-register{
 }
 small,.muted,.meta,.course-tag,.course-meta,.faculty-role,.ranker-result,
 .ranker-school,.results-kicker,.form-note,.breadcrumb,figcaption,.copyright{font-weight:600}
+
+/* Refined MAVI typography — Outfit headings, DM Sans reading text */
+html,body,button,input,select,textarea{font-family:'DM Sans',sans-serif!important}
+h1,h2,h3,h4,h5,h6,.brand strong,.brand-mark,.btn,.links a,.eyebrow,
+.nav-login,.nav-register,.faculty-heading h2,.faculty-info h3,
+.card h3,.section-head h2,.page-hero h1,.formbox h2,.cta h2,.footgrid h4{
+ font-family:'Outfit',sans-serif!important
+}
+body{font-size:16px;line-height:1.72;letter-spacing:0}
+p{font-size:15.5px;line-height:1.75;letter-spacing:0}
+h1{font-size:clamp(44px,5.4vw,70px);font-weight:700;letter-spacing:-1.5px;line-height:1.08}
+h2{font-size:clamp(31px,3.7vw,44px);font-weight:700;letter-spacing:-.8px;line-height:1.16}
+h3{font-weight:650;letter-spacing:-.25px}
+small,.muted,.meta,.course-tag,.course-meta,.faculty-role,.ranker-result,
+.ranker-school,.results-kicker,.form-note,.breadcrumb,figcaption,.copyright{
+ font-family:'DM Sans',sans-serif!important;font-size:13px!important;font-weight:500;letter-spacing:.15px;line-height:1.6
+}
+label,.field label{font-family:'DM Sans',sans-serif!important;font-size:13px!important;font-weight:600;letter-spacing:.1px}
+.links a,nav a{font-family:'Outfit',sans-serif!important;font-size:14px!important;letter-spacing:.1px;font-weight:600}
+.btn,.button,.nav-login,.nav-register,button{font-family:'Outfit',sans-serif!important;font-size:14px!important;letter-spacing:0;font-weight:650}
+.brand strong{font-family:'Outfit',sans-serif!important;font-size:18px!important;letter-spacing:.15px}
+.card p,.faculty-info p,.field input,.field select,.field textarea{font-size:14px!important}
+.wrap{width:min(1200px,calc(100% - 48px))}
+footer .footgrid a,footer .footer-links a,footer .footer-column a,footer .footer-col a,footer .foot-links a{
+ font-family:'DM Sans',sans-serif!important;font-size:14px!important;font-weight:500!important;letter-spacing:.65px!important;line-height:1.9!important
+}
+@media(max-width:650px){
+ body{font-size:15.5px}
+ p{font-size:15px}
+ .wrap{width:calc(100% - 36px)}
+ .links a{font-size:14px!important}
+ small,.muted,.meta,.course-tag,.course-meta,.faculty-role,.ranker-result,.ranker-school,.results-kicker,.form-note,.breadcrumb,figcaption,.copyright{font-size:12.5px!important}
+}
