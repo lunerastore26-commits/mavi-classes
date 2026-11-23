@@ -154,7 +154,7 @@
     });
 
     const footerForm=$("#footerDescriptionForm");
-    const DEFAULT_FOOTER_INTRO="Meerut's premier coaching institute for CBSE & ICSE, guided by Amit Mavi.";
+    const DEFAULT_FOOTER_INTRO="Meerut's premier coaching institute for all (CBSE & ICSE) — by Amit Mavi";
     const footerInput=$("#footerDescriptionInput");
     const footerCounter=$("#footerDescriptionCounter");
     const updateFooterCounter=()=>{footerCounter.textContent=footerInput.value.length+" / 300 characters";};
