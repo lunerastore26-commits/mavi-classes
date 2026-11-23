@@ -96,3 +96,23 @@ footer h4,footer h3{color:#f0c29f!important}
 footer .brand strong{color:#ffffff!important}
 footer .brand-mark{background:#ffffff!important;color:#103b35!important}
 footer .footer-bottom,footer .copyright{border-color:rgba(255,255,255,.16)!important;color:#c4d4ce!important}
+
+/* Footer category links: match the supplied understated, letter-spaced typography */
+footer .footgrid a,
+footer .footer-links a,
+footer .footer-column a,
+footer .footer-col a,
+footer .foot-links a{
+  font-family:'Plus Jakarta Sans',sans-serif!important;
+  font-size:13px!important;
+  font-weight:600!important;
+  letter-spacing:1.25px!important;
+  line-height:1.8!important;
+  text-transform:none!important;
+  color:#d4e0db!important;
+}
+footer .footgrid a:hover,
+footer .footer-links a:hover,
+footer .footer-column a:hover,
+footer .footer-col a:hover,
+footer .foot-links a:hover{color:#e2a77f!important}
