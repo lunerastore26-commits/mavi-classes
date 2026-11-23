@@ -1,6 +1,6 @@
 /* MAVI CLASSES footer: editable introduction + fixed institute details */
 (() => {
-  const DEFAULT_INTRO = "Meerut's premier coaching institute for CBSE & ICSE, guided by Amit Mavi.";
+  const DEFAULT_INTRO = "Meerut's premier coaching institute for all (CBSE & ICSE) — by Amit Mavi";
   const STORAGE_KEY = "maviFooterIntroV1";
 
   const render = (node, intro) => {
