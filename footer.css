@@ -91,3 +91,7 @@ footer.mavi-footer .mavi-footer-brand>a.mavi-footer-logo>.mavi-footer-name>span+
  .mavi-footer .mavi-footer-contact>div{font-size:12px!important}
  .mavi-footer .mavi-footer-column a{overflow-wrap:anywhere!important}
 }
+
+.mavi-footer .mavi-footer-description{max-width:520px!important;white-space:normal!important;line-height:1.9!important}
+.mavi-footer .mavi-footer-description strong{color:#fff!important;font-weight:700!important}
+.mavi-footer .mavi-footer-description a{color:#fff!important;text-decoration:underline!important;text-underline-offset:3px!important}
