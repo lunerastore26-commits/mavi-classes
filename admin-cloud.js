@@ -164,7 +164,7 @@
       if(!data?.setting_value){
         const legacy=await sb.from("site_settings").select("setting_value").eq("setting_key","footer_description").maybeSingle();
         if(legacy.error) throw legacy.error;
-        const firstLine=String(legacy.data?.setting_value||"").split(/\\r?\\n/).map(x=>x.trim()).find(Boolean);
+        const firstLine=String(legacy.data?.setting_value||"").split(/\r?\n/).map(x=>x.trim()).find(Boolean);
         footerInput.value=firstLine||DEFAULT_FOOTER_INTRO;
       } else footerInput.value=data.setting_value;
       footerInput.value=footerInput.value.slice(0,300);
