@@ -159,16 +159,17 @@
     const footerCounter=$("#footerDescriptionCounter");
     const updateFooterCounter=()=>{footerCounter.textContent=footerInput.value.length+" / 300 characters";};
     async function loadFooter(){
+      const field=$("#footerDescriptionInput");
       let {data,error}=await sb.from("site_settings").select("setting_value").eq("setting_key","footer_intro").maybeSingle();
       if(error) throw error;
       if(!data?.setting_value){
         const legacy=await sb.from("site_settings").select("setting_value").eq("setting_key","footer_description").maybeSingle();
         if(legacy.error) throw legacy.error;
         const firstLine=String(legacy.data?.setting_value||"").split(/\r?\n/).map(x=>x.trim()).find(Boolean);
-        footerInput.value=firstLine||DEFAULT_FOOTER_INTRO;
-      } else footerInput.value=data.setting_value;
-      footerInput.value=footerInput.value.slice(0,300);
-      updateFooterCounter();
+        field.value=firstLine||"Meerut's premier coaching institute for all (CBSE & ICSE) — by Amit Mavi";
+      } else field.value=data.setting_value;
+      field.value=field.value.slice(0,300);
+      $("#footerDescriptionCounter").textContent=field.value.length+" / 300 characters";
     }
     footerInput.addEventListener("input",updateFooterCounter);
     footerForm.addEventListener("submit",async e=>{
