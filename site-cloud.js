@@ -16,6 +16,7 @@
     if (form) {
       form.addEventListener("submit", async event => {
         event.preventDefault();
+        event.stopImmediatePropagation();
         if (!form.reportValidity()) return;
         const data = Object.fromEntries(new FormData(form).entries());
         const target = form.querySelector('[type="submit"]');
