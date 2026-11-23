@@ -61,3 +61,13 @@ footer{background:#102f33}
 .faculty-empty{background:#faf9f5;border-color:#d7ded8}
 .faculty-card{box-shadow:0 7px 24px rgba(23,63,67,.06)}
 .btn.danger{background:#fff0ed;color:#a94d3d}
+
+/* Shared header actions — Login + Register Now */
+.nav-auth{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-login,.nav-register{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 20px;border-radius:24px;font:800 14px Manrope,sans-serif;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}
+.nav-login{background:#f4f6f9;color:#253247!important;box-shadow:none}
+.nav-login:hover{background:#e9edf3}
+.nav-register{background:#ff690f;color:#fff!important;box-shadow:0 7px 17px #ff690f30}
+.nav-register:hover{background:#ed5706;transform:translateY(-1px)}
+@media(max-width:900px){.nav-auth{gap:7px}.nav-login,.nav-register{min-height:39px;padding:0 14px;font-size:12px}}
+@media(max-width:560px){.nav-auth{gap:6px}.nav-login,.nav-register{min-height:35px;padding:0 11px;font-size:11px}}
