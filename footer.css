@@ -24,3 +24,9 @@
 .mavi-footer-logo{display:inline-flex!important;align-items:flex-start!important;gap:0!important}
 .mavi-footer-name{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;font:800 21px/1.02 'Outfit','DM Sans',sans-serif!important;letter-spacing:.7px!important;color:#fff!important}
 .mavi-footer-name span+span{font-size:.72em!important;letter-spacing:2.1px!important;margin-top:3px!important}
+
+/* Explicit two-line footer wordmark on every page */
+footer.mavi-footer .mavi-footer-brand>a.mavi-footer-logo{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;width:max-content!important;line-height:1!important}
+footer.mavi-footer .mavi-footer-brand>a.mavi-footer-logo>.mavi-footer-name{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:0!important;white-space:normal!important;line-height:1!important}
+footer.mavi-footer .mavi-footer-brand>a.mavi-footer-logo>.mavi-footer-name>span{display:block!important;line-height:1.02!important}
+footer.mavi-footer .mavi-footer-brand>a.mavi-footer-logo>.mavi-footer-name>span+span{margin-top:2px!important;font-size:.72em!important;letter-spacing:2.1px!important}
