@@ -87,3 +87,12 @@ h3{font-weight:750;letter-spacing:-.45px}
 p{letter-spacing:0}
 button,.btn,.nav-login,.nav-register{font-weight:700}
 .brand strong{font-weight:800;letter-spacing:.35px}
+
+/* Footer dark green finish */
+footer{background:#103b35!important;color:#f7f8f4!important}
+footer p,footer a,footer .muted{color:#d4e0db!important}
+footer a:hover{color:#e2a77f!important}
+footer h4,footer h3{color:#f0c29f!important}
+footer .brand strong{color:#ffffff!important}
+footer .brand-mark{background:#ffffff!important;color:#103b35!important}
+footer .footer-bottom,footer .copyright{border-color:rgba(255,255,255,.16)!important;color:#c4d4ce!important}
