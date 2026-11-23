@@ -1,5 +1,29 @@
 /* MAVI CLASSES · public cloud content */
 (() => {
+  const renderFooter = (node, intro) => {
+    node.replaceChildren();
+    node.appendChild(document.createTextNode(intro));
+    const lines = [
+      ["Complete address", "2nd Floor, Western Plaza, PL Sharma Road, Begambagh, Meerut, Uttar Pradesh 250001."],
+      ["Phone", "+91 96345 95507"],
+      ["Office hours", "Monday–Saturday, 8 AM–8 PM"],
+      ["Courses & Preparation", "CBSE, B.Sc., NEET, CLAT, IAS, SSC, Police, Airforce Y Group, Banking, TET, Super TET, TGT aur PGT"]
+    ];
+    lines.forEach(([label, value]) => {
+      node.appendChild(document.createElement("br"));
+      node.appendChild(document.createElement("br"));
+      const strong = document.createElement("strong");
+      strong.textContent = label + ":";
+      node.appendChild(strong);
+      node.appendChild(document.createTextNode(" "));
+      if (label === "Phone") {
+        const link = document.createElement("a");
+        link.href = "tel:+919634595507";
+        link.textContent = value;
+        node.appendChild(link);
+      } else node.appendChild(document.createTextNode(value));
+    });
+  };
   const ready = window.maviSupabaseReady;
   if (!ready) return;
   ready.then(async sb => {
@@ -19,36 +43,22 @@
         event.stopImmediatePropagation();
         if (!form.reportValidity()) return;
         const data = Object.fromEntries(new FormData(form).entries());
-        const target = form.querySelector('[type="submit"]');
-        const n = form.querySelector(".notice") || document.querySelector(".notice");
-        if (target) target.disabled = true;
-        notice(n, "Submitting your enquiry securely…");
-        try {
-          const { error } = await sb.from("enquiries").insert({
-            student_name: String(data.name || "").trim(),
-            phone: String(data.phone || "").trim(),
-            email: String(data.email || "").trim() || null,
-            course: String(data.course || "").trim(),
-            message: String(data.message || "").trim() || null
-          });
-          if (error) throw error;
-          form.reset();
-          notice(n, "Thank you. Your enquiry has been received by MAVI CLASSES. Our team can contact you soon.");
-        } catch (err) {
-          console.error("MAVI enquiry submission:", err);
-          notice(n, "We could not send your enquiry right now. Please call +91 96345 95507 or try again.", true);
-        } finally { if (target) target.disabled = false; }
-      }, { capture: true });
-    }
-
-    // Shared footer text is loaded from the cloud when the setting exists.
+        c    // Only the short introduction is editable; institute details remain fixed.
     try {
-      const { data } = await sb.from("site_settings").select("setting_value").eq("setting_key","footer_description").maybeSingle();
-      if (data?.setting_value) {
-        const nodes = document.querySelectorAll(".mavi-footer-description");
-        nodes.forEach(node => {
-          node.replaceChildren();
-          data.setting_value.split("\\n").forEach((line, i) => {
+      let { data, error } = await sb.from("site_settings").select("setting_value").eq("setting_key","footer_intro").maybeSingle();
+      if (error) throw error;
+      let intro = data?.setting_value;
+      if (!intro) {
+        const legacy = await sb.from("site_settings").select("setting_value").eq("setting_key","footer_description").maybeSingle();
+        if (legacy.error) throw legacy.error;
+        intro = String(legacy.data?.setting_value || "").split(/\r?\n/).map(line => line.trim()).find(Boolean);
+      }
+      if (intro) {
+        document.querySelectorAll(".mavi-footer-description").forEach(node => renderFooter(node, intro));
+      }
+    } catch (err) { console.warn("Cloud footer introduction unavailable; keeping default footer.", err); }
+
+setting_value.split("\\n").forEach((line, i) => {
             if (i) node.appendChild(document.createElement("br"));
             const m = line.match(/^(Complete address|Phone|Office hours|All programmes):\\s*(.*)$/);
             if (!m) { node.appendChild(document.createTextNode(line)); return; }
