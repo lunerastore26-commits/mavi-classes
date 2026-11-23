@@ -54,3 +54,14 @@ footer.mavi-footer .mavi-footer-brand>a.mavi-footer-logo>.mavi-footer-name>span+
   .mavi-footer .mavi-footer-column h4{font-size:15px!important}
   .mavi-footer .mavi-footer-column a{font-size:13px!important}
 }
+
+
+/* Footer contact and institute details — shared across every page */
+.mavi-footer .mavi-footer-description{max-width:390px!important;margin:18px 0 18px!important;color:#c2d0ca!important;font:400 14px/1.75 'DM Sans',sans-serif!important}
+.mavi-footer .mavi-footer-contact{display:grid!important;gap:13px!important;max-width:410px!important}
+.mavi-footer .mavi-footer-contact>div{display:flex!important;align-items:flex-start!important;gap:11px!important;color:#cbd8d2!important;font:400 13px/1.65 'DM Sans',sans-serif!important}
+.mavi-footer .mavi-footer-contact strong{display:block!important;color:#fff!important;font:700 11px/1.5 'Outfit','DM Sans',sans-serif!important;letter-spacing:.8px!important;text-transform:uppercase!important;margin-bottom:2px!important}
+.mavi-footer .mavi-footer-contact a{color:#e4eee8!important;text-decoration:none!important}
+.mavi-footer .mavi-footer-contact a:hover{color:#e2a77f!important}
+.mavi-footer .footer-icon{width:17px!important;flex:0 0 17px!important;color:#e2a77f!important;font-size:16px!important;line-height:1.4!important;text-align:center!important}
+@media(max-width:900px){.mavi-footer .mavi-footer-description{max-width:620px!important}.mavi-footer .mavi-footer-contact{max-width:620px!important}}
