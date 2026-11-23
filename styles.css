@@ -46,6 +46,9 @@ header{background:rgba(255,253,250,.96);border-bottom-color:#e8e7df}
 .eyebrow{color:#9d5c3c;background:#f7eee6;border-color:#ead9ca}
 .eyebrow:before{background:var(--orange)}
 h1,h2,h3{font-family:'Manrope',sans-serif}
+/* Clear, confident heading hierarchy across all non-footer pages */
+h1,h2,h3,.page-hero h1,.section-head h2,.card h3,.formbox h2,.faculty-heading h2,.faculty-info h3,.info h2{font-weight:800!important}
+
 h1,h2,.section-head h2,.card h3,.formbox h2,.faculty-heading h2,.faculty-info h3{color:var(--navy)}
 h1 em{color:var(--orange)}
 .band b,.card a,.ticks span:before{color:var(--orange)}
