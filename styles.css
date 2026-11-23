@@ -71,3 +71,8 @@ footer{background:#102f33}
 .nav-register:hover{background:#ed5706;transform:translateY(-1px)}
 @media(max-width:900px){.nav-auth{gap:7px}.nav-login,.nav-register{min-height:39px;padding:0 14px;font-size:12px}}
 @media(max-width:560px){.nav-auth{gap:6px}.nav-login,.nav-register{min-height:35px;padding:0 11px;font-size:11px}}
+
+/* Logo lockup: brand name only, deep green wordmark */
+.brand strong{color:#173f43!important;font-weight:800;letter-spacing:.45px}
+.brand-mark{background:#173f43!important;color:#fff!important;box-shadow:inset 0 -4px 0 #c77b52}
+.brand small{display:none!important}
