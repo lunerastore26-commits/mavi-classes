@@ -17,7 +17,7 @@
 .mavi-footer-column a{display:block!important;width:fit-content!important;margin:0 0 12px!important;color:#c5d2cc!important;font:500 14px/1.6 'DM Sans',sans-serif!important;letter-spacing:.2px!important;transition:color .18s,transform .18s!important}
 .mavi-footer-column a:hover{color:#e2a77f!important;transform:translateX(3px)!important}
 .mavi-footer-bottom{display:flex!important;justify-content:space-between!important;gap:16px!important;padding-top:18px!important;border-top:1px solid rgba(255,255,255,.16)!important;color:#aebfb7!important;font:400 12px/1.6 'DM Sans',sans-serif!important;letter-spacing:.2px!important}
-@media(max-width:900px){.mavi-footer-grid{grid-template-columns:1fr 1fr!important;gap:34px!important}.mavi-footer-brand{grid-column:1/-1!important}.mavi-footer-brand>p{max-width:560px!important}}
+@media(max-width:900px){.mavi-footer-grid{grid-template-columns:1.5fr 1fr 1fr!important;gap:34px!important}.mavi-footer-brand{grid-column:1/-1!important}.mavi-footer-brand>p{max-width:560px!important}}
 @media(max-width:600px){.mavi-footer{padding:42px 0 17px!important}.mavi-footer>.wrap{width:calc(100% - 38px)!important}.mavi-footer-grid{grid-template-columns:1fr 1fr!important;gap:26px 20px!important;padding-bottom:28px!important}.mavi-footer-brand{grid-column:1/-1!important}.mavi-footer-logo{font-size:19px!important}.mavi-footer-column h4{font-size:15px!important;margin-bottom:13px!important}.mavi-footer-column a{font-size:13px!important;margin-bottom:10px!important}.mavi-footer-bottom{flex-direction:column!important;gap:5px!important;font-size:11px!important}}
 
 /* Brand wordmark: MAVI on the first line, CLASSES directly beneath */
