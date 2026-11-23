@@ -1,6 +1,6 @@
 /* MAVI CLASSES footer description editor */
 (() => {
-  const STORAGE_KEY = "maviFooterDescription";
+  const STORAGE_KEY = "maviFooterDescriptionV2";
   const DEFAULT_TEXT = "Meerut's premier coaching institute for all (CBSE & ICSE) — by Amit Mavi\n\nComplete address: 2nd Floor, Western Plaza, PL Sharma Road, Begambagh, Meerut, Uttar Pradesh 250001.\nPhone: +91 96345 95507 — clickable calling link.\nOffice hours: Monday–Saturday, 8 AM–8 PM.\nAll programmes: CBSE, B.Sc., NEET, CLAT, IAS, SSC, Police, Airforce Y Group, Banking, TET, Super TET, TGT aur PGT.";
   const currentText = () => {
     try {
