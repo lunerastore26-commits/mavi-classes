@@ -101,6 +101,11 @@ h1 span{color:var(--gold)}
 footer{background:#102f33}.footer-links h4{color:#d7a27f}
 .top{display:none!important}
 
+
+/* Header action buttons styled to match the supplied reference */
+.nav-auth{display:flex;align-items:center;gap:10px;flex-shrink:0}.nav-login,.nav-register{display:inline-flex;align-items:center;justify-content:center;height:42px;padding:0 20px;border-radius:24px;font:800 14px Manrope,sans-serif;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}.nav-login{background:#f4f6f9;color:#253247!important;box-shadow:none}.nav-login:hover{background:#e9edf3}.nav-register{background:#ff690f;color:#fff!important;box-shadow:0 7px 17px #ff690f30}.nav-register:hover{background:#ed5706;transform:translateY(-1px)}
+@media(max-width:900px){.nav-auth{gap:7px}.nav-login,.nav-register{height:39px;padding:0 14px;font-size:12px}}
+@media(max-width:680px){.nav-auth{margin-left:auto}.nav-login,.nav-register{height:36px;padding:0 12px;font-size:11px}}
 </style>
 </head>
 <body>
@@ -108,8 +113,8 @@ footer{background:#102f33}.footer-links h4{color:#d7a27f}
 <header><div class="wrap nav">
 <a class="logo" href="index.html" aria-label="MAVI CLASSES home"><span class="logo-mark">M</span><span><span class="logo-title">MAVI CLASSES</span><br><span class="logo-sub">Learn · Prepare · Achieve</span></span></a>
 <button class="hamb" id="hamb" aria-label="Toggle menu" aria-expanded="false">☰</button>
-<nav class="links" id="links"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="faculty.html">Faculty</a><a href="about.html">About</a><a href="resources.html">Resources</a><a href="feedback.html">Student Feedback</a><a href="login.html">Login</a><a class="nav-enroll" href="register.html">Register Now <span>→</span></a></nav>
-<a class="button" href="register.html">Enquire now ↗</a>
+<nav class="links" id="links"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="faculty.html">Faculty</a><a href="about.html">About</a><a href="resources.html">Resources</a><a href="feedback.html">Student Feedback</a></nav>
+<div class="nav-auth"><a class="nav-login" href="login.html">Login</a><a class="nav-register" href="register.html">Register Now</a></div>
 </div></header>
 <main>
 <section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy"><div class="hero-announcement"><span class="live-dot"></span> Admissions & course enquiries open <span class="announce-arrow">→</span></div><div class="kicker">MAVI CLASSES · MEERUT</div><h1>Your path to<br><span>your next goal.</span></h1><p>Build a focused preparation plan with course options for academic, entrance and competitive examinations — all in one place.</p><div class="hero-actions"><a class="button gold" href="register.html">✦ &nbsp; Enquire now</a><a class="button watch" href="courses.html"><span class="play">▶</span> Explore courses</a></div><div class="hero-proof"><span class="proof-mark">M</span><span><strong>Find the right programme</strong><small>Explore courses · Ask about current batches</small></span></div></div><div class="hero-visual"><div class="hero-image"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85" alt="Students studying together in a classroom" fetchpriority="high"><div class="image-caption"><strong>Learn with direction.</strong><span>Start with the goal you want to achieve.</span></div></div><div class="float-card float-top"><span class="float-icon">✦</span><span><strong>Course guidance</strong><small>Choose your exam pathway</small></span></div><div class="float-card float-bottom"><span class="float-icon blue">✓</span><span><strong>11 course categories</strong><small>Academic · Entrance · Competitive</small></span></div><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div></div></div></section>
