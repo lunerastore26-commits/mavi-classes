@@ -13,3 +13,5 @@
 .faculty-note-done{margin-top:8px;padding:11px 20px;border:0;border-radius:7px;background:#103b35;color:#fff;font:700 13px 'Manrope',sans-serif;cursor:pointer}
 body.faculty-note-open{overflow:hidden}
 @media(max-width:480px){.faculty-note{padding:30px 23px 23px}.faculty-note h2{font-size:21px}.faculty-note-copy{font-size:15px}}
+
+.faculty-team-note{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:0 0 30px;padding:19px 22px;border:1px solid #e5ebe7;border-radius:13px;background:linear-gradient(115deg,#f8faf8,#fffdf9)}.faculty-team-note .eyebrow{color:#a77839}.faculty-team-note p{margin:5px 0 0;color:#33453e;font:600 14px 'DM Sans',sans-serif}.faculty-team-note .faculty-message-trigger{margin:0;white-space:nowrap}@media(max-width:600px){.faculty-team-note{align-items:flex-start;flex-direction:column;gap:12px}.faculty-team-note .faculty-message-trigger{white-space:normal}}
