@@ -77,17 +77,6 @@ footer{background:#102f33}
 .brand-mark{background:#173f43!important;color:#fff!important;box-shadow:inset 0 -4px 0 #c77b52}
 .brand small{display:none!important}
 
-/* MAVI typography system: Plus Jakarta Sans headings + Inter body */
-html,body,button,input,select,textarea{font-family:'Inter',sans-serif!important}
-h1,h2,h3,h4,h5,h6,.brand strong,.brand-mark,.btn,.links a,.eyebrow,.nav-login,.nav-register,.faculty-heading h2,.faculty-info h3,.faculty-info .faculty-role,.card h3,.section-head h2,.page-hero h1,.formbox h2,.cta h2,.footgrid h4{font-family:'Plus Jakarta Sans',sans-serif!important}
-body{font-size:15px;letter-spacing:-.08px}
-h1{font-weight:800;letter-spacing:-1.8px}
-h2{font-weight:800;letter-spacing:-1.1px}
-h3{font-weight:750;letter-spacing:-.45px}
-p{letter-spacing:0}
-button,.btn,.nav-login,.nav-register{font-weight:700}
-.brand strong{font-weight:800;letter-spacing:.35px}
-
 /* Footer dark green finish */
 footer{background:#103b35!important;color:#f7f8f4!important}
 footer p,footer a,footer .muted{color:#d4e0db!important}
