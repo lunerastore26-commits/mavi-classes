@@ -1,0 +1,15 @@
+/* Compact faculty note dialog with a soft blurred page backdrop */
+.faculty-message-trigger{display:inline-flex;align-items:center;gap:7px;margin-top:15px;padding:9px 13px;border:1px solid #dce6e3;border-radius:999px;background:#f7faf9;color:#103b35;font:700 12px 'Manrope',sans-serif;cursor:pointer;transition:.2s}
+.faculty-message-trigger:hover{background:#103b35;color:#fff;border-color:#103b35}
+.faculty-note-backdrop{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:22px;background:rgba(13,28,39,.34);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
+.faculty-note-backdrop.open{opacity:1;visibility:visible}
+.faculty-note{position:relative;width:min(440px,100%);padding:34px 32px 28px;border:1px solid rgba(255,255,255,.8);border-radius:18px;background:#fffdf9;box-shadow:0 24px 90px rgba(9,29,39,.24);transform:translateY(12px) scale(.985);transition:transform .22s ease}
+.faculty-note-backdrop.open .faculty-note{transform:translateY(0) scale(1)}
+.faculty-note-close{position:absolute;top:13px;right:15px;width:34px;height:34px;border:0;border-radius:50%;background:#f0f3f1;color:#33433e;font-size:23px;cursor:pointer}
+.faculty-note-kicker{display:block;margin-bottom:13px;color:#a77839;font:800 10px 'Manrope',sans-serif;letter-spacing:1.8px}
+.faculty-note h2{margin:0 35px 5px 0;color:#173b36;font:800 24px/1.2 'Manrope',sans-serif}
+.faculty-note-role{margin:0 0 20px;color:#77827d;font:600 12px 'DM Sans',sans-serif}
+.faculty-note-copy{margin:0;padding:19px 0 22px;border-top:1px solid #e9eeeb;color:#34443e;font:400 16px/1.75 'DM Sans',sans-serif;white-space:pre-wrap}
+.faculty-note-done{margin-top:8px;padding:11px 20px;border:0;border-radius:7px;background:#103b35;color:#fff;font:700 13px 'Manrope',sans-serif;cursor:pointer}
+body.faculty-note-open{overflow:hidden}
+@media(max-width:480px){.faculty-note{padding:30px 23px 23px}.faculty-note h2{font-size:21px}.faculty-note-copy{font-size:15px}}
