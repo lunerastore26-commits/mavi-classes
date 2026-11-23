@@ -144,6 +144,17 @@ h3{font-weight:750;letter-spacing:-.45px}
 .voice-button span{margin-left:8px}
 @media(max-width:850px){.ranker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.results-section{padding:62px 0}.results-heading{align-items:flex-start;flex-direction:column}.ranker-grid{gap:11px}.ranker-card{padding:19px 10px;min-height:190px}.ranker-avatar{width:72px;height:72px}.ranker-name{font-size:12px}.ranker-school{font-size:9px}.student-voices{align-items:flex-start;flex-direction:column;padding:20px}}
+
+/* Seamless, continuously moving student rankers carousel */
+.ranker-marquee{width:100%;overflow:hidden;position:relative;padding:4px 0 12px;mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
+.ranker-track{display:flex;align-items:stretch;gap:18px;width:max-content;animation:rankers-scroll 34s linear infinite;will-change:transform}
+.ranker-track:hover{animation-play-state:paused}
+.ranker-track>.ranker-card,.ranker-duplicate>.ranker-card{flex:0 0 clamp(215px,23vw,260px);width:clamp(215px,23vw,260px)}
+.ranker-duplicate{display:flex;gap:18px}
+@keyframes rankers-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 9px))}}
+@media(max-width:850px){.ranker-track>.ranker-card,.ranker-duplicate>.ranker-card{flex-basis:235px;width:235px}.ranker-track{animation-duration:29s}}
+@media(max-width:560px){.ranker-track>.ranker-card,.ranker-duplicate>.ranker-card{flex-basis:220px;width:220px}.ranker-track{animation-duration:26s}}
+@media(prefers-reduced-motion:reduce){.ranker-track{animation:none}.ranker-marquee{overflow-x:auto;mask-image:none}}
 </style>
 </head>
 <body>
@@ -180,11 +191,16 @@ h3{font-weight:750;letter-spacing:-.45px}
    <div><div class="results-kicker">Proud moments · MAVI CLASSES</div><h2>Our students. Their achievements.</h2><p>Celebrating the hard work, progress and milestones of our learners.</p></div>
    <a class="results-link" href="feedback.html">Share your story <span>↗</span></a>
   </div>
-  <div class="ranker-grid">
-   <article class="ranker-card"><div class="ranker-avatar avatar-violet">M</div><div class="ranker-name">MAY GILL</div><div class="ranker-result">BOARD · 97%</div><div class="ranker-school">CBSE · MEERUT</div></article>
+  <div class="ranker-marquee" aria-label="Student achievements scrolling continuously">
+   <div class="ranker-track"><article class="ranker-card"><div class="ranker-avatar avatar-violet">M</div><div class="ranker-name">MAY GILL</div><div class="ranker-result">BOARD · 97%</div><div class="ranker-school">CBSE · MEERUT</div></article>
    <article class="ranker-card"><div class="ranker-avatar avatar-green">K</div><div class="ranker-name">KRITIKA GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
    <article class="ranker-card"><div class="ranker-avatar avatar-green">P</div><div class="ranker-name">PRIYANJALI GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
    <article class="ranker-card"><div class="ranker-avatar avatar-violet">A</div><div class="ranker-name">AKASH DUBEY</div><div class="ranker-result">ICSE BOARD · 93%</div><div class="ranker-school">CHRIST CHURCH COLLEGE · MEERUT</div></article>
+    <div class="ranker-duplicate" aria-hidden="true"><article class="ranker-card"><div class="ranker-avatar avatar-violet">M</div><div class="ranker-name">MAY GILL</div><div class="ranker-result">BOARD · 97%</div><div class="ranker-school">CBSE · MEERUT</div></article>
+   <article class="ranker-card"><div class="ranker-avatar avatar-green">K</div><div class="ranker-name">KRITIKA GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
+   <article class="ranker-card"><div class="ranker-avatar avatar-green">P</div><div class="ranker-name">PRIYANJALI GARG</div><div class="ranker-result">NEET</div><div class="ranker-school">SOPHIA GIRLS · MEERUT</div></article>
+   <article class="ranker-card"><div class="ranker-avatar avatar-violet">A</div><div class="ranker-name">AKASH DUBEY</div><div class="ranker-result">ICSE BOARD · 93%</div><div class="ranker-school">CHRIST CHURCH COLLEGE · MEERUT</div></article></div>
+   </div>
   </div>
   <div class="student-voices">
    <div><div class="results-kicker">Student feedback</div><h3>Every student has a story.</h3><p>Share your experience, tell us what helped you, and celebrate your learning journey. Feedback is reviewed before it is featured publicly.</p></div>
