@@ -115,6 +115,38 @@ footer{background:#102f33}.footer-links h4{color:#d7a27f}
 .mavi-stacked-name{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;font:800 20px/1.02 Manrope,sans-serif!important;letter-spacing:1.2px!important;color:#121b32!important}
 .mavi-stacked-name span+span{font-size:.72em!important;letter-spacing:2.3px!important;margin-top:3px!important}
 .mavi-stacked-brand .logo-mark{display:none!important}
+
+/* Proud Moments: dedicated section styling and continuous student-card marquee */
+#student-results{display:block;padding:76px 0 72px;background:linear-gradient(180deg,#fbf8f2 0%,#f3f1e9 100%);overflow:hidden}
+#student-results>.wrap{width:min(1160px,calc(100% - 44px));margin:0 auto}
+#student-results .results-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:0 0 30px}
+#student-results .results-kicker{color:#a76543;font:800 10px/1.4 Manrope,sans-serif;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+#student-results .results-heading h2{margin:0 0 10px;color:#173f43;font:800 clamp(27px,3.2vw,39px)/1.16 Manrope,sans-serif;letter-spacing:-1.1px}
+#student-results .results-heading p{margin:0;color:#687777;font:400 14px/1.7 'DM Sans',sans-serif}
+#student-results .results-link{flex:0 0 auto;display:inline-flex;align-items:center;gap:15px;padding:12px 18px;border:1px solid #d8d9ce;border-radius:5px;color:#173f43;background:#fffdfa;font:800 12px Manrope,sans-serif;transition:background .2s,border-color .2s}
+#student-results .results-link:hover{background:#f5ece3;border-color:#c77b52}
+#student-results .results-link span{font-size:18px;color:#c77b52}
+#student-results .ranker-marquee{position:relative;width:100%;overflow:hidden;padding:8px 0 22px;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 4%,#000 96%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 4%,#000 96%,transparent 100%)}
+#student-results .ranker-track{display:flex;align-items:stretch;width:max-content;max-width:none;animation:maviRankerMarquee 32s linear infinite;transform:translate3d(0,0,0);will-change:transform}
+#student-results .ranker-marquee:hover .ranker-track{animation-play-state:paused}
+#student-results .ranker-card{flex:0 0 250px;width:250px;min-height:190px;margin:0 18px 0 0;padding:24px 22px 21px;border:1px solid #e7e5dc;border-radius:10px;background:#fffdfa;box-shadow:0 9px 25px rgba(23,63,67,.07);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;animation:none!important;opacity:1!important;transform:none!important}
+#student-results .ranker-duplicate{display:flex;flex:0 0 auto;gap:0}
+#student-results .ranker-avatar{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;margin-bottom:17px;font:800 17px Manrope,sans-serif}
+#student-results .avatar-violet{background:#eee9f4;color:#6b5684}
+#student-results .avatar-green{background:#e7eee8;color:#315b4b}
+#student-results .ranker-name{color:#173f43;font:800 15px/1.35 Manrope,sans-serif;letter-spacing:.35px;margin-bottom:8px}
+#student-results .ranker-result{color:#b16c48;font:800 12px/1.4 Manrope,sans-serif;letter-spacing:.7px;margin-bottom:5px}
+#student-results .ranker-school{color:#7b8580;font:700 9px/1.5 'DM Sans',sans-serif;letter-spacing:1px}
+#student-results .student-voices{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:24px;padding:27px 32px;border-radius:9px;background:#173f43;color:#fff}
+#student-results .student-voices .results-kicker{color:#e0b18e;margin-bottom:7px}
+#student-results .student-voices h3{margin:0 0 6px;color:#fff;font:800 21px/1.25 Manrope,sans-serif}
+#student-results .student-voices p{max-width:690px;margin:0;color:#d5e0db;font:400 12px/1.65 'DM Sans',sans-serif}
+#student-results .voice-button{flex:0 0 auto;display:inline-flex;align-items:center;gap:15px;padding:13px 18px;border-radius:4px;background:#d7a27f;color:#173f43;font:800 11px Manrope,sans-serif;white-space:nowrap;transition:background .2s,transform .2s}
+#student-results .voice-button:hover{background:#ecc4a6;transform:translateY(-1px)}
+#student-results .voice-button span{font-size:17px}
+@keyframes maviRankerMarquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(max-width:760px){#student-results{padding:58px 0 54px}#student-results .results-heading{align-items:flex-start;flex-direction:column;gap:17px;margin-bottom:20px}#student-results .results-heading h2{font-size:29px}#student-results .ranker-card{flex-basis:225px;width:225px;min-height:180px;padding:20px}#student-results .student-voices{align-items:flex-start;flex-direction:column;padding:23px 22px;gap:17px}}
+@media(prefers-reduced-motion:reduce){#student-results .ranker-track{animation:none!important;transform:none!important}#student-results .ranker-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
 </style>
 <link rel="stylesheet" href="footer.css?v=20261123-final">
 
