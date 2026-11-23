@@ -174,5 +174,5 @@
       const {error}=await sb.from("site_settings").upsert({setting_key:"footer_description",setting_value:value,updated_at:new Date().toISOString()},{onConflict:"setting_key"});
       notice($("#footerDescriptionNotice"),error?error.message:"Default footer description published online.",!!error);
     });
-  }).catch(err=>{notice($("#cloudLoginNotice"),"Cloud setup error: "+err.message,true);});
+  }).catch(err=>{loginPanel.hidden=false;workspace.hidden=true;notice($("#cloudLoginNotice"),"Cloud setup error: "+err.message,true);});
 })();
