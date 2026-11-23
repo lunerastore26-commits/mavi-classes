@@ -154,25 +154,36 @@
     });
 
     const footerForm=$("#footerDescriptionForm");
+    const DEFAULT_FOOTER_INTRO="Meerut's premier coaching institute for CBSE & ICSE, guided by Amit Mavi.";
+    const footerInput=$("#footerDescriptionInput");
+    const footerCounter=$("#footerDescriptionCounter");
+    const updateFooterCounter=()=>{footerCounter.textContent=footerInput.value.length+" / 300 characters";};
     async function loadFooter(){
-      const {data,error}=await sb.from("site_settings").select("setting_value").eq("setting_key","footer_description").maybeSingle();
-      if(error)throw error;
-      if(data?.setting_value)$("#footerDescriptionInput").value=data.setting_value;
-      $("#footerDescriptionCounter").textContent=$("#footerDescriptionInput").value.length+" / 2000 characters";
+      let {data,error}=await sb.from("site_settings").select("setting_value").eq("setting_key","footer_intro").maybeSingle();
+      if(error) throw error;
+      if(!data?.setting_value){
+        const legacy=await sb.from("site_settings").select("setting_value").eq("setting_key","footer_description").maybeSingle();
+        if(legacy.error) throw legacy.error;
+        const firstLine=String(legacy.data?.setting_value||"").split(/\\r?\\n/).map(x=>x.trim()).find(Boolean);
+        footerInput.value=firstLine||DEFAULT_FOOTER_INTRO;
+      } else footerInput.value=data.setting_value;
+      footerInput.value=footerInput.value.slice(0,300);
+      updateFooterCounter();
     }
-    $("#footerDescriptionInput").addEventListener("input",()=>$("#footerDescriptionCounter").textContent=$("#footerDescriptionInput").value.length+" / 2000 characters");
+    footerInput.addEventListener("input",updateFooterCounter);
     footerForm.addEventListener("submit",async e=>{
-      e.preventDefault();const value=$("#footerDescriptionInput").value.trim();
-      if(!value||value.length>2000){notice($("#footerDescriptionNotice"),"Enter up to 2000 characters.",true);return;}
-      const {error}=await sb.from("site_settings").upsert({setting_key:"footer_description",setting_value:value,updated_at:new Date().toISOString()},{onConflict:"setting_key"});
+      e.preventDefault();
+      const value=footerInput.value.trim();
+      if(!value||value.length>300){notice($("#footerDescriptionNotice"),"Enter a short introduction of up to 300 characters.",true);return;}
+      const {error}=await sb.from("site_settings").upsert({setting_key:"footer_intro",setting_value:value,updated_at:new Date().toISOString()},{onConflict:"setting_key"});
       if(error){notice($("#footerDescriptionNotice"),error.message,true);return;}
-      notice($("#footerDescriptionNotice"),"Footer description saved online for all visitors.");
+      notice($("#footerDescriptionNotice"),"Short footer introduction saved online for all visitors. Address, phone, office hours and Courses & Preparation remain unchanged.");
     });
     $("#resetFooterDescription").addEventListener("click",async()=>{
-      const value="Meerut's premier coaching institute for all (CBSE & ICSE) — by Amit Mavi\n\nComplete address: 2nd Floor, Western Plaza, PL Sharma Road, Begambagh, Meerut, Uttar Pradesh 250001.\nPhone: +91 96345 95507 — clickable calling link.\nOffice hours: Monday–Saturday, 8 AM–8 PM.\nAll programmes: CBSE, B.Sc., NEET, CLAT, IAS, SSC, Police, Airforce Y Group, Banking, TET, Super TET, TGT aur PGT.";
-      $("#footerDescriptionInput").value=value;$("#footerDescriptionCounter").textContent=value.length+" / 2000 characters";
-      const {error}=await sb.from("site_settings").upsert({setting_key:"footer_description",setting_value:value,updated_at:new Date().toISOString()},{onConflict:"setting_key"});
-      notice($("#footerDescriptionNotice"),error?error.message:"Default footer description published online.",!!error);
+      footerInput.value=DEFAULT_FOOTER_INTRO;updateFooterCounter();
+      const {error}=await sb.from("site_settings").upsert({setting_key:"footer_intro",setting_value:DEFAULT_FOOTER_INTRO,updated_at:new Date().toISOString()},{onConflict:"setting_key"});
+      notice($("#footerDescriptionNotice"),error?error.message:"Default introduction restored online.",!!error);
     });
+
   }).catch(err=>{loginPanel.hidden=false;workspace.hidden=true;notice($("#cloudLoginNotice"),"Cloud setup error: "+err.message,true);});
 })();
