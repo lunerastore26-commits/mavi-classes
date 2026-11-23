@@ -65,3 +65,29 @@ footer.mavi-footer .mavi-footer-brand>a.mavi-footer-logo>.mavi-footer-name>span+
 .mavi-footer .mavi-footer-contact a:hover{color:#e2a77f!important}
 .mavi-footer .footer-icon{width:17px!important;flex:0 0 17px!important;color:#e2a77f!important;font-size:16px!important;line-height:1.4!important;text-align:center!important}
 @media(max-width:900px){.mavi-footer .mavi-footer-description{max-width:620px!important}.mavi-footer .mavi-footer-contact{max-width:620px!important}}
+
+
+/* Complete institute information footer — balanced desktop and mobile layout */
+.mavi-footer .mavi-footer-grid{
+  grid-template-columns:minmax(260px,1.65fr) repeat(3,minmax(145px,1fr))!important;
+  gap:34px!important;
+  align-items:start!important;
+}
+.mavi-footer .mavi-footer-brand{min-width:0!important}
+.mavi-footer .mavi-footer-description{max-width:430px!important;font-size:14px!important;line-height:1.8!important}
+.mavi-footer .mavi-footer-contact{max-width:460px!important;gap:14px!important}
+.mavi-footer .mavi-footer-contact>div{font-size:13px!important;line-height:1.7!important}
+.mavi-footer .mavi-footer-contact>div>span:last-child{min-width:0!important}
+.mavi-footer .mavi-footer-contact strong{font-size:11px!important;margin-bottom:3px!important}
+@media(max-width:1000px){
+ .mavi-footer .mavi-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:30px!important}
+ .mavi-footer .mavi-footer-brand{grid-column:1/-1!important}
+ .mavi-footer .mavi-footer-description,.mavi-footer .mavi-footer-contact{max-width:720px!important}
+}
+@media(max-width:600px){
+ .mavi-footer .mavi-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:25px 20px!important}
+ .mavi-footer .mavi-footer-brand{grid-column:1/-1!important}
+ .mavi-footer .mavi-footer-contact{gap:12px!important}
+ .mavi-footer .mavi-footer-contact>div{font-size:12px!important}
+ .mavi-footer .mavi-footer-column a{overflow-wrap:anywhere!important}
+}
