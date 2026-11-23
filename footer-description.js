@@ -1,6 +1,7 @@
 /* MAVI CLASSES footer description editor */
 (() => {
   const STORAGE_KEY = "maviFooterDescriptionV2";
+  const MAX_LENGTH = 2000;
   const DEFAULT_TEXT = "Meerut's premier coaching institute for all (CBSE & ICSE) — by Amit Mavi\n\nComplete address: 2nd Floor, Western Plaza, PL Sharma Road, Begambagh, Meerut, Uttar Pradesh 250001.\nPhone: +91 96345 95507 — clickable calling link.\nOffice hours: Monday–Saturday, 8 AM–8 PM.\nAll programmes: CBSE, B.Sc., NEET, CLAT, IAS, SSC, Police, Airforce Y Group, Banking, TET, Super TET, TGT aur PGT.";
   const currentText = () => {
     try {
@@ -62,10 +63,22 @@
     notice.style.color = isError ? "#a33b32" : "#276344";
     notice.style.display = "block";
   };
-  input.value = currentText();
+  input.maxLength = MAX_LENGTH;
+  const counter = document.getElementById("footerDescriptionCounter");
+  const updateCounter = () => {
+    if (counter) counter.textContent = `${input.value.length} / ${MAX_LENGTH} characters`;
+  };
+  input.addEventListener("input", updateCounter);
+  input.value = currentText().slice(0, MAX_LENGTH);
+  updateCounter();
   form.addEventListener("submit", event => {
     event.preventDefault();
     const value = input.value.trim();
+    if (input.value.length > MAX_LENGTH) {
+      showNotice(`Footer description cannot exceed ${MAX_LENGTH} characters.`, true);
+      input.focus();
+      return;
+    }
     if (!value) {
       showNotice("Please enter the footer description before saving.", true);
       input.focus();
@@ -81,7 +94,8 @@
   });
   const reset = document.getElementById("resetFooterDescription");
   if (reset) reset.addEventListener("click", () => {
-    input.value = DEFAULT_TEXT;
+    input.value = DEFAULT_TEXT.slice(0, MAX_LENGTH);
+    updateCounter();
     try {
       localStorage.setItem(STORAGE_KEY, DEFAULT_TEXT);
       applyFooterDescription();
