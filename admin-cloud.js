@@ -15,7 +15,7 @@
       if(!data) return false;
       loginPanel.hidden=true; workspace.hidden=false;
       $("#cloudAdminIdentity").textContent=user.email||"Authorized administrator";
-      await Promise.all([renderFaculty(),renderAssets(),loadFooter()]);
+      await Promise.all([renderFaculty(),renderAssets(),renderEnquiries(),loadFooter()]);
       return true;
     }
     if(session) {
@@ -86,6 +86,31 @@
       }catch(err){notice($("#adminNotice"),err.message,true);}finally{btn.disabled=false;}
     });
     $("#cancelEdit").addEventListener("click",resetFaculty);
+
+    async function renderEnquiries(){
+      const {data,error}=await sb.from("enquiries").select("*").order("created_at",{ascending:false}).limit(100);
+      if(error)throw error;
+      const list=$("#enquiryAdminList");list.replaceChildren();
+      if(!data.length){list.textContent="No admission enquiries have been received yet.";return;}
+      data.forEach(item=>{
+        const card=document.createElement("article");card.className="admin-faculty-row";card.style.alignItems="flex-start";card.style.flexWrap="wrap";
+        const meta=document.createElement("div");meta.className="admin-faculty-meta";meta.style.minWidth="220px";
+        const name=document.createElement("b");name.textContent=item.student_name;
+        const phone=document.createElement("a");phone.href="tel:"+item.phone.replace(/[^0-9+]/g,"");phone.textContent=item.phone;
+        const course=document.createElement("span");course.textContent="Course: "+item.course;
+        const email=document.createElement("span");email.textContent=item.email||"No email provided";
+        const date=document.createElement("span");date.textContent=new Date(item.created_at).toLocaleString();
+        meta.append(name,phone,course,email,date);
+        if(item.message){const msg=document.createElement("p");msg.textContent=item.message;meta.append(msg);}
+        const controls=document.createElement("div");controls.className="admin-actions";
+        const status=document.createElement("select");status.setAttribute("aria-label","Enquiry status for "+item.student_name);
+        [["new","New"],["contacted","Contacted"],["closed","Closed"]].forEach(([v,label])=>{const o=document.createElement("option");o.value=v;o.textContent=label;status.append(o);});
+        status.value=item.status;
+        status.addEventListener("change",async()=>{status.disabled=true;const {error}=await sb.from("enquiries").update({status:status.value}).eq("id",item.id);status.disabled=false;if(error){notice($("#adminNotice"),error.message,true);status.value=item.status;}else{item.status=status.value;notice($("#adminNotice"),"Enquiry status updated.");}});
+        controls.append(status);card.append(meta,controls);list.append(card);
+      });
+    }
+    $("#refreshEnquiries").addEventListener("click",()=>renderEnquiries().catch(err=>notice($("#adminNotice"),err.message,true)));
 
     const imageForm=$("#siteImageForm");
     async function renderAssets(){
