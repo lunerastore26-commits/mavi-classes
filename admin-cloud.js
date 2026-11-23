@@ -3,7 +3,7 @@
   const $ = s => document.querySelector(s);
   const notice = (el,msg,bad=false) => { if(!el)return; el.textContent=msg; el.classList.add("show"); el.style.color=bad?"#a33b32":""; };
   const loginPanel = $("#cloudAdminLogin");
-  const workspace = $("#cloudAdminWorkspace");
+  const workspace = $("#adminProtectedSections");
   if (!window.maviSupabaseReady) return;
   window.maviSupabaseReady.then(async sb => {
     const {data:{session}} = await sb.auth.getSession();
